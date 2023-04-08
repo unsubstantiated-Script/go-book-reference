@@ -1,13 +1,18 @@
-package goBook
+package averageBeef
 
 import (
+	"embed"
+	_ "embed"
 	"fmt"
 	"goBook/goBook/util"
 	"log"
 )
 
+//go:embed beefPrices.txt
+var contents embed.FS
+
 func AverageBeef() {
-	numbers, err := util.GetFloats("data.txt")
+	numbers, err := util.GetFloats(contents, "beefPrices.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
