@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/countVotes"
+import "goBook/goBook/subscribers"
 
 func main() {
 	//goBook.PassFail()
@@ -11,5 +11,6 @@ func main() {
 	//goBook.PassFail()
 	//goBook.ToCelsius()
 	//averageBeef.AverageBeef()
-	countVotes.CountVotes()
+	//countVotes.CountVotes()
+	subscribers.Magazine()
 }
