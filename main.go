@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/subscribers"
+import "goBook/goBook/typeConversion"
 
 func main() {
 	//goBook.PassFail()
@@ -12,5 +12,7 @@ func main() {
 	//goBook.ToCelsius()
 	//averageBeef.AverageBeef()
 	//countVotes.CountVotes()
-	subscribers.Magazine()
+	//subscribers.Magazine()
+	//typeConversion.DoubleTypeNumber()
+	typeConversion.ConvertLiquidVolume()
 }
