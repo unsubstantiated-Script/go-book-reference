@@ -1,4 +1,4 @@
-package encapsulate
+package calendar
 
 import "errors"
 
@@ -8,7 +8,7 @@ type Date struct {
 	day   int
 }
 
-// SetYear Go Setters. Do Not export by keeping struct info lowercase
+// Go Setters. Do Not export by keeping struct info lowercase
 func (d *Date) SetYear(year int) error {
 	if year < 1 {
 		return errors.New("invalid year")
@@ -31,4 +31,15 @@ func (d *Date) SetDay(day int) error {
 	}
 	d.day = day
 	return nil
+}
+
+// Go Getters...heh
+func (d *Date) Year() int {
+	return d.year
+}
+func (d *Date) Month() int {
+	return d.month
+}
+func (d *Date) Day() int {
+	return d.day
 }

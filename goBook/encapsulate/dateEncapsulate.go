@@ -2,11 +2,12 @@ package encapsulate
 
 import (
 	"fmt"
+	"goBook/goBook/encapsulate/calendar"
 	"log"
 )
 
 func Dateige() {
-	date := Date{}
+	date := calendar.Date{}
 	err := date.SetYear(2022)
 	if err != nil {
 		log.Fatal(err)
@@ -20,5 +21,8 @@ func Dateige() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(date)
+	//Getting the getters
+	fmt.Println(date.Month())
+	fmt.Println(date.Day())
+	fmt.Println(date.Year())
 }
