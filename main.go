@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/typeConversion"
+import "goBook/goBook/encapsulate"
 
 func main() {
 	//goBook.PassFail()
@@ -14,5 +14,6 @@ func main() {
 	//countVotes.CountVotes()
 	//subscribers.Magazine()
 	//typeConversion.DoubleTypeNumber()
-	typeConversion.ConvertLiquidVolume()
+	//typeConversion.ConvertLiquidVolume()
+	encapsulate.Dateige()
 }
