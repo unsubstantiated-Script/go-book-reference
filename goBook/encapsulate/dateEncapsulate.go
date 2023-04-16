@@ -7,22 +7,29 @@ import (
 )
 
 func Dateige() {
-	date := calendar.Date{}
-	err := date.SetYear(2022)
+	event := calendar.Event{}
+	err := event.SetTitle("Momther's Day")
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = date.SetMonth(4)
+
+	err = event.SetYear(2022)
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = date.SetDay(25)
+	err = event.SetMonth(4)
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = event.SetDay(25)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	//Getting the getters
-	fmt.Println(date.Month())
-	fmt.Println(date.Day())
-	fmt.Println(date.Year())
+	fmt.Println(event.Title())
+	fmt.Println(event.Month())
+	fmt.Println(event.Day())
+	fmt.Println(event.Year())
+
 }
