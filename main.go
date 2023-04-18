@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/encapsulate"
+import "goBook/goBook"
 
 func main() {
 	//goBook.PassFail()
@@ -15,5 +15,6 @@ func main() {
 	//subscribers.Magazine()
 	//typeConversion.DoubleTypeNumber()
 	//typeConversion.ConvertLiquidVolume()
-	encapsulate.Dateige()
+	//encapsulate.Dateige()
+	goBook.PlaySongs()
 }
