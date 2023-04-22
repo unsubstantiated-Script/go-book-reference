@@ -2,8 +2,15 @@ package goBook
 
 import "goBook/goBook/gadget"
 
-func playList(device gadget.TapePlayer, songs []string) {
+// The interface
+type Player interface {
+	// The things required
+	Play(string)
+	Stop()
+}
 
+//Passing in the interface and the songs
+func playList(device Player, songs []string) {
 	// Playing through the list of songs
 	for _, song := range songs {
 		device.Play(song)
@@ -14,7 +21,9 @@ func playList(device gadget.TapePlayer, songs []string) {
 }
 
 func PlaySongs() {
-	player := gadget.TapePlayer{}
 	mixtape := []string{"Jessie's Girl", "Tootsie Roll", "Be Like Mike"}
+	var player Player = gadget.TapePlayer{}
+	playList(player, mixtape)
+	player = gadget.TapeRecorder{}
 	playList(player, mixtape)
 }
