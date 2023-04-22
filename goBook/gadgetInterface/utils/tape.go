@@ -1,4 +1,4 @@
-package gadget
+package utils
 
 import "fmt"
 
