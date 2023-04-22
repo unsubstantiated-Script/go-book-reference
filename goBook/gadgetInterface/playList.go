@@ -1,8 +1,6 @@
-package goBook
+package gadgetInterface
 
-import (
-	"goBook/goBook/gadget"
-)
+import "goBook/goBook/gadgetInterface/utils"
 
 // The interface
 type Player interface {
@@ -15,7 +13,7 @@ func TryOut(player Player) {
 	player.Play("Test Track")
 	player.Stop()
 	//Asserting this type to make it work
-	recorder, ok := player.(gadget.TapeRecorder)
+	recorder, ok := player.(utils.TapeRecorder)
 
 	// Safety checking an interface against it's accepted type. Avoids a runtime panic.
 	if ok {
@@ -38,11 +36,11 @@ func playList(device Player, songs []string) {
 
 func PlaySongs() {
 	mixtape := []string{"Jessie's Girl", "Tootsie Roll", "Be Like Mike"}
-	var player Player = gadget.TapePlayer{}
+	var player Player = utils.TapePlayer{}
 	playList(player, mixtape)
-	player = gadget.TapeRecorder{}
+	player = utils.TapeRecorder{}
 	playList(player, mixtape)
 
-	TryOut(gadget.TapeRecorder{})
-	TryOut(gadget.TapePlayer{})
+	TryOut(utils.TapeRecorder{})
+	TryOut(utils.TapePlayer{})
 }
