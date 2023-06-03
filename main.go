@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/emptyInterface"
+import "goBook/goBook/readThisDirectory"
 
 func main() {
 	//goBook.PassFail()
@@ -17,5 +17,7 @@ func main() {
 	//typeConversion.ConvertLiquidVolume()
 	//encapsulate.Dateige()
 	//goBook.PlaySongs()
-	emptyInterface.EmptyInterface()
+	//emptyInterface.EmptyInterface()
+	//numFloats.SumIt()
+	readThisDirectory.DirScaner()
 }
