@@ -6,6 +6,21 @@ import (
 	"path/filepath"
 )
 
+func reportPanic() {
+	p := recover()
+
+	if p == nil {
+		return
+	}
+
+	err, ok := p.(error)
+
+	if ok {
+		fmt.Println(err)
+	} else {
+		panic(p)
+	}
+}
 func readThisDirectory(path string) error {
 
 	fmt.Println(path)
@@ -28,5 +43,7 @@ func readThisDirectory(path string) error {
 }
 
 func DirScaner() {
+	//Calling this deferred so that will still log the error panic, but not be hindered by a code crash.
+	defer reportPanic()
 	readThisDirectory("goBook/readThisDirectory")
 }
