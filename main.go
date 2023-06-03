@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/numFloats"
+import "goBook/goBook/readThisDirectory"
 
 func main() {
 	//goBook.PassFail()
@@ -18,5 +18,6 @@ func main() {
 	//encapsulate.Dateige()
 	//goBook.PlaySongs()
 	//emptyInterface.EmptyInterface()
-	numFloats.SumIt()
+	//numFloats.SumIt()
+	readThisDirectory.DirScaner()
 }
