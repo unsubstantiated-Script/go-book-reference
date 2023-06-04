@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook"
+import "goBook/goBook/readThisDirectory"
 
 func main() {
 	//goBook.PassFail()
@@ -10,5 +10,14 @@ func main() {
 	//goBook.NegateBool()
 	//goBook.PassFail()
 	//goBook.ToCelsius()
-	goBook.AverageBeef()
+	//averageBeef.AverageBeef()
+	//countVotes.CountVotes()
+	//subscribers.Magazine()
+	//typeConversion.DoubleTypeNumber()
+	//typeConversion.ConvertLiquidVolume()
+	//encapsulate.Dateige()
+	//goBook.PlaySongs()
+	//emptyInterface.EmptyInterface()
+	//numFloats.SumIt()
+	readThisDirectory.DirScaner()
 }
