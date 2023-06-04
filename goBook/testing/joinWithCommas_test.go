@@ -9,8 +9,11 @@ func TestBuildJoin(t *testing.T) {
 func TestTwoElements(t *testing.T) {
 	list := []string{"apple", "orange"}
 
-	if joinWithCommas(list) != "apple and orange" {
-		t.Error("Didn't match expected value")
+	want := "apple and orange"
+	got := joinWithCommas(list)
+
+	if got != want {
+		t.Errorf("\n  got: joinWithCommas(%#v) = \"%s\"\n want: \"%s\"", list, got, want)
 	}
 
 	//t.Error("no test written yet")
@@ -21,7 +24,11 @@ func TestThreeElements(t *testing.T) {
 
 	list := []string{"apple", "orange", "peach"}
 
-	if joinWithCommas(list) != "apple, orange, and peach" {
-		t.Error("Didn't match expected value")
+	want := "apple, orange, and peach"
+	got := joinWithCommas(list)
+
+	if got != want {
+		t.Errorf("\n got: joinWithCommas(%#v) = \"%s\"\n want: \"%s\"", list, got, want)
 	}
+
 }
