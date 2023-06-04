@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/readThisDirectory"
+import "goBook/goBook/goRoutines"
 
 func main() {
 	//goBook.PassFail()
@@ -19,5 +19,6 @@ func main() {
 	//goBook.PlaySongs()
 	//emptyInterface.EmptyInterface()
 	//numFloats.SumIt()
-	readThisDirectory.DirScaner()
+	//readThisDirectory.DirScaner()
+	goRoutines.WebCralwer()
 }
