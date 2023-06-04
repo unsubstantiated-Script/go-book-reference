@@ -7,19 +7,26 @@ import (
 	"net/http"
 )
 
+type Page struct {
+	URL  string
+	Size int
+}
+
 func WebCralwer() {
-	sizesChan := make(chan int)
+	pages := make(chan Page)
 	//Refactored into a loop
 	urls := []string{"https://example.com", "https://golang.org/", "https://golang.org/doc"}
 
 	for _, url := range urls {
-		go responseSize(url, sizesChan)
+		go responseSize(url, pages)
 	}
 
 	for i := 0; i < len(urls); i++ {
-		fmt.Println(<-sizesChan)
+		page := <-pages
+		fmt.Printf("%s: %d\n", page.URL, page.Size)
 	}
 
+	// Difficult to tell which size goes with which url. So we need to refactor in structs.
 	//Running these as Go routines.
 	//Go routines do NOT return values. So we gotta use channels
 	// Passing in the channel as an argument so we can load it up functioning as a return of sorts for a go routine.
@@ -32,7 +39,7 @@ func WebCralwer() {
 	//fmt.Println(<-sizesChan)
 }
 
-func responseSize(url string, channel chan int) {
+func responseSize(url string, channel chan Page) {
 
 	fmt.Println("Getting", url)
 	response, err := http.Get(url)
@@ -51,5 +58,5 @@ func responseSize(url string, channel chan int) {
 	}
 
 	//Basically loading the receive or "return" into a channel
-	channel <- len(body)
+	channel <- Page{URL: url, Size: len(body)}
 }
