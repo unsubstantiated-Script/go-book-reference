@@ -1,6 +1,9 @@
 package testing
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestBuildJoin(t *testing.T) {
 	//t.Error("no test written yet")
@@ -13,7 +16,7 @@ func TestTwoElements(t *testing.T) {
 	got := joinWithCommas(list)
 
 	if got != want {
-		t.Errorf("\n  got: joinWithCommas(%#v) = \"%s\"\n want: \"%s\"", list, got, want)
+		t.Error(errorString(list, got, want))
 	}
 
 	//t.Error("no test written yet")
@@ -28,7 +31,11 @@ func TestThreeElements(t *testing.T) {
 	got := joinWithCommas(list)
 
 	if got != want {
-		t.Errorf("\n got: joinWithCommas(%#v) = \"%s\"\n want: \"%s\"", list, got, want)
+		t.Error(errorString(list, got, want))
 	}
 
+}
+
+func errorString(list []string, got string, want string) string {
+	return fmt.Sprintf("\n got: joinWithCommas(%#v) = \"%s\"\n want: \"%s\"", list, got, want)
 }
