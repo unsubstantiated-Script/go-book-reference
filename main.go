@@ -1,6 +1,6 @@
 package main
 
-import "goBook/goBook/testing"
+import "goBook/goBook/webDemo"
 
 func main() {
 	//goBook.PassFail()
@@ -21,5 +21,6 @@ func main() {
 	//numFloats.SumIt()
 	//readThisDirectory.DirScaner()
 	//goRoutines.WebCralwer()
-	testing.BuildJoin()
+	//testing.BuildJoin()
+	webDemo.WebAppDemo()
 }
